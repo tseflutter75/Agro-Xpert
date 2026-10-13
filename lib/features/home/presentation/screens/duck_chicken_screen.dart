@@ -32,61 +32,49 @@ class _ChickenDuckScreenState extends State<ChickenDuckScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 50,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: items.length,
-                itemBuilder: (context, index) {
-                  // Check if the current item is selected
-                  final bool isSelected = selectedItemList.contains(
-                    items[index],
-                  );
+        child: GridView.builder(
+          itemCount: items.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3, // প্রতি row-তে ৩টি item
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+            childAspectRatio: 1.8,
+          ),
+          itemBuilder: (context, index) {
+            final bool isSelected = selectedItemList.contains(items[index]);
 
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          if (isSelected) {
-                            selectedItemList.remove(items[index]);
-                          } else {
-                            selectedItemList.add(items[index]);
-                          }
-                          print(selectedItemList);
-                        });
-                      },
-                      child: Container(
-                        width: 70,
-                        decoration: BoxDecoration(
-                          // Use individual item state here
-                          color: isSelected
-                              ? Color(
-                                  0xFFF59E0B,
-                                ) // Change to AppColor.primaryGreen if defined
-                              : Colors.white,
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: Colors.grey),
-                        ),
-                        child: Center(
-                          child: Text(
-                            items[index],
-                            style: TextStyle(
-                              fontSize: 12,
-                              // Optional: Change text color so it's readable on green
-                              color: isSelected ? Colors.white : Colors.black,
-                            ),
-                          ),
-                        ),
-                      ),
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  if (isSelected) {
+                    selectedItemList.remove(items[index]);
+                  } else {
+                    selectedItemList.add(items[index]);
+                  }
+                });
+
+                print(selectedItemList);
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: isSelected ? Color(0xFFF59E0B) : Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: isSelected ? Color(0xFFF59E0B) : Colors.grey,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    items[index],
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: isSelected ? Colors.white : Colors.black,
                     ),
-                  );
-                },
+                  ),
+                ),
               ),
-            ),
-          ],
+            );
+          },
         ),
       ),
     );
