@@ -19,6 +19,16 @@ class _PetAnimalScreenState extends State<PetAnimalScreen> {
     'খরগোশ',
   ];
 
+  List<String> images = [
+    "assets/images/posu/gorudugdho.png",
+    "assets/images/posu/gorugorumota.jpg",
+    "assets/images/posu/chagoldesi.png",
+    "assets/images/posu/chagolhaibrid.jpg",
+    "assets/images/posu/mohis.jpg",
+    "assets/images/posu/vera.jpg",
+    "assets/images/posu/khorgos.jpg",
+  ];
+
   // Removed selectedItemCheckColor since we check it dynamically per item
   final List<String> selectedItemList = [];
 
@@ -38,7 +48,7 @@ class _PetAnimalScreenState extends State<PetAnimalScreen> {
             crossAxisCount: 3, // প্রতি row-তে ৩টি item
             crossAxisSpacing: 12,
             mainAxisSpacing: 12,
-            childAspectRatio: 1.8,
+            childAspectRatio: 1.2,
           ),
           itemBuilder: (context, index) {
             final bool isSelected = selectedItemList.contains(items[index]);
@@ -60,17 +70,21 @@ class _PetAnimalScreenState extends State<PetAnimalScreen> {
                   color: isSelected ? Color(0xFF8B5CF6) : Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: isSelected ? Color(0xFF8B5CF6) : Colors.grey,
+                    color: isSelected ? Color(0xFF8B5CF6) : Color(0xFF8B5CF6),
                   ),
                 ),
-                child: Center(
-                  child: Text(
-                    items[index],
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: isSelected ? Colors.white : Colors.black,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(images[index], height: 45, width: 45),
+                    Text(
+                      items[index],
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: isSelected ? Colors.white : Colors.black,
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ),
             );

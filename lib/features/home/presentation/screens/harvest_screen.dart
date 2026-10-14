@@ -21,15 +21,15 @@ class _HarvestScreenState extends State<HarvestScreen> {
   ];
 
   List<String> images = [
-    "assets/images/harvest.png",
-    "assets/images/harvest.png",
-    "assets/images/harvest.png",
-    "assets/images/harvest.png",
-    "assets/images/harvest.png",
-    "assets/images/harvest.png",
-    "assets/images/harvest.png",
-    "assets/images/harvest.png",
-    "assets/images/harvest.png",
+    "assets/images/fosol/sobji.jpg",
+    "assets/images/fosol/dhan.png",
+    "assets/images/fosol/gom.jpg",
+    "assets/images/fosol/vutta.jpg",
+    "assets/images/fosol/job.jpg",
+    "assets/images/fosol/sorisa.jpg",
+    "assets/images/fosol/pat.jpg",
+    "assets/images/fosol/akh.jpg",
+    "assets/images/fosol/mosur.jpg",
   ];
 
   final List<String> selectedItemList = [];
@@ -40,62 +40,52 @@ class _HarvestScreenState extends State<HarvestScreen> {
       appBar: AppBar(title: const Text("ফসল"), centerTitle: true),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 300,
-              child: GridView.builder(
-                itemCount: items.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3, // প
-                  crossAxisSpacing: 12,
-                  mainAxisSpacing: 12,
-                  childAspectRatio: 1.8,
+        child: GridView.builder(
+          itemCount: items.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3, // প
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+            childAspectRatio: 1.2,
+          ),
+          itemBuilder: (context, index) {
+            final bool isSelected = selectedItemList.contains(items[index]);
+
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  if (isSelected) {
+                    selectedItemList.remove(items[index]);
+                  } else {
+                    selectedItemList.add(items[index]);
+                  }
+                });
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: isSelected ? Colors.green : Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: isSelected ? Colors.green : Colors.green,
+                  ),
                 ),
-                itemBuilder: (context, index) {
-                  final bool isSelected = selectedItemList.contains(
-                    items[index],
-                  );
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(images[index], height: 45, width: 45),
 
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (isSelected) {
-                          selectedItemList.remove(items[index]);
-                        } else {
-                          selectedItemList.add(items[index]);
-                        }
-                      });
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: isSelected ? Colors.green : Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: isSelected ? Colors.green : Colors.grey,
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          Image.asset(images[index], height: 30, width: 30),
-
-                          Center(
-                            child: Text(
-                              items[index],
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: isSelected ? Colors.white : Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+                    Text(
+                      items[index],
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: isSelected ? Colors.white : Colors.black,
                       ),
                     ),
-                  );
-                },
+                  ],
+                ),
               ),
-            ),
-          ],
+            );
+          },
         ),
       ),
     );

@@ -23,6 +23,21 @@ class _FishScreenState extends State<FishScreen> {
     'অন্যান্য',
   ];
 
+  List<String> images = [
+    "assets/images/motso/rui.jpg",
+    "assets/images/motso/katla.jpg",
+    "assets/images/motso/mrigel.jpg",
+    "assets/images/motso/telapiya.jpg",
+    "assets/images/motso/pangas.jpg",
+    "assets/images/motso/silvarcrap.jpg",
+    "assets/images/motso/grasscrap.jpg",
+    "assets/images/motso/chinri.jpg",
+    "assets/images/motso/ilish.jpg",
+    "assets/images/motso/sing.png",
+    "assets/images/motso/magur.jpg",
+    "assets/images/motso/magur.jpg",
+  ];
+
   // Removed selectedItemCheckColor since we check it dynamically per item
   final List<String> selectedItemList = [];
 
@@ -42,7 +57,7 @@ class _FishScreenState extends State<FishScreen> {
             crossAxisCount: 3, // প্রতি row-তে ৩টি item
             crossAxisSpacing: 12,
             mainAxisSpacing: 12,
-            childAspectRatio: 1.8,
+            childAspectRatio: 1.2,
           ),
           itemBuilder: (context, index) {
             final bool isSelected = selectedItemList.contains(items[index]);
@@ -64,17 +79,21 @@ class _FishScreenState extends State<FishScreen> {
                   color: isSelected ? Color(0xFF0EA5E9) : Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: isSelected ? Color(0xFF0EA5E9) : Colors.grey,
+                    color: isSelected ? Color(0xFF0EA5E9) : Color(0xFF0EA5E9),
                   ),
                 ),
-                child: Center(
-                  child: Text(
-                    items[index],
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: isSelected ? Colors.white : Colors.black,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(images[index], height: 45, width: 45),
+                    Text(
+                      items[index],
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: isSelected ? Colors.white : Colors.black,
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ),
             );

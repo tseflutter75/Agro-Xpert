@@ -29,6 +29,27 @@ class _VegetableScreenState extends State<VegetableScreen> {
     'অন্যান্য',
   ];
 
+  List<String> images = [
+    "assets/images/sobji/alu.jpg",
+    "assets/images/sobji/tomatoo.jpg",
+    "assets/images/sobji/begun.jpg",
+    "assets/images/sobji/mula.jpg",
+    "assets/images/sobji/lau.jpg",
+    "assets/images/sobji/kumra.jpg",
+    "assets/images/sobji/shim.jpg",
+    "assets/images/sobji/peyaj.jpg",
+    "assets/images/sobji/rosun.jpg",
+    "assets/images/sobji/morich.jpg",
+    "assets/images/sobji/dheros.jpg",
+    "assets/images/sobji/palongsak.jpg",
+    "assets/images/sobji/lalsak.png",
+    "assets/images/sobji/puisak.jpg",
+    "assets/images/sobji/korla.jpg",
+    "assets/images/sobji/jhinge.png",
+    "assets/images/sobji/cicinga.jpg",
+    "assets/images/sobji/alu.jpg",
+  ];
+
   // Removed selectedItemCheckColor since we check it dynamically per item
   final List<String> selectedItemList = [];
 
@@ -48,7 +69,7 @@ class _VegetableScreenState extends State<VegetableScreen> {
             crossAxisCount: 3, // প্রতি row-তে ৩টি item
             crossAxisSpacing: 12,
             mainAxisSpacing: 12,
-            childAspectRatio: 1.8,
+            childAspectRatio: 1.2,
           ),
           itemBuilder: (context, index) {
             final bool isSelected = selectedItemList.contains(items[index]);
@@ -70,17 +91,21 @@ class _VegetableScreenState extends State<VegetableScreen> {
                   color: isSelected ? Color(0xFF65A30D) : Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: isSelected ? Color(0xFF65A30D) : Colors.grey,
+                    color: isSelected ? Color(0xFF65A30D) : Color(0xFF65A30D),
                   ),
                 ),
-                child: Center(
-                  child: Text(
-                    items[index],
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: isSelected ? Colors.white : Colors.black,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(images[index], height: 45, width: 45),
+                    Text(
+                      items[index],
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: isSelected ? Colors.white : Colors.black,
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ),
             );

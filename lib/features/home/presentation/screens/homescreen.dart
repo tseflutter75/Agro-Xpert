@@ -1,5 +1,5 @@
 import 'package:agroxpert/app/color.dart';
-import 'package:agroxpert/features/home/presentation/screens/duck_chicken_screen.dart';
+import 'package:agroxpert/features/home/presentation/screens/chicken_duck_screen.dart';
 import 'package:agroxpert/features/home/presentation/screens/egg_screen.dart';
 import 'package:agroxpert/features/home/presentation/screens/fish_screen.dart';
 import 'package:agroxpert/features/home/presentation/screens/harvest_screen.dart';
@@ -26,10 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         centerTitle: true,
         leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
-        title: const Text(
-          'Agro Xpert',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        ),
+        title: const Text('Agro Xpert'),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 12),
@@ -65,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 physics: const NeverScrollableScrollPhysics(),
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
-                childAspectRatio: 1.65,
+                childAspectRatio: 1.4,
                 children: [
                   ActionCard(
                     title: 'ফসল',
@@ -134,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
 
                   ActionCard(
-                    title: 'গরু ছাগল',
+                    title: 'পশু',
                     image: "assets/images/cow.png",
                     colors: const [Color(0xFF8B5CF6), Color(0xFF6D28D9)],
                     onTap: () {

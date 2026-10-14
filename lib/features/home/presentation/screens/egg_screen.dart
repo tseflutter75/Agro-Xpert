@@ -18,6 +18,16 @@ class _EggScreenState extends State<EggScreen> {
     'অন্যান্য',
   ];
 
+  List<String> images = [
+    "assets/images/dim/farmerlaldim.png",
+    "assets/images/dim/farmerdimsada.jpg",
+    "assets/images/dim/desimurgirdim.jpg",
+    "assets/images/dim/haserdim.jpg",
+    "assets/images/dim/koyelerdim.jpg",
+    "assets/images/dim/organikdim.jpg",
+    "assets/images/dim/organikdim.jpg",
+  ];
+
   // Removed selectedItemCheckColor since we check it dynamically per item
   final List<String> selectedItemList = [];
 
@@ -37,7 +47,7 @@ class _EggScreenState extends State<EggScreen> {
             crossAxisCount: 3, // প্রতি row-তে ৩টি item
             crossAxisSpacing: 12,
             mainAxisSpacing: 12,
-            childAspectRatio: 1.8,
+            childAspectRatio: 1.2,
           ),
           itemBuilder: (context, index) {
             final bool isSelected = selectedItemList.contains(items[index]);
@@ -59,17 +69,21 @@ class _EggScreenState extends State<EggScreen> {
                   color: isSelected ? Color(0xFFF97316) : Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: isSelected ? Color(0xFFF97316) : Colors.grey,
+                    color: isSelected ? Color(0xFFF97316) : Color(0xFFF97316),
                   ),
                 ),
-                child: Center(
-                  child: Text(
-                    items[index],
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: isSelected ? Colors.white : Colors.black,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(images[index], height: 45, width: 45),
+                    Text(
+                      items[index],
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: isSelected ? Colors.white : Colors.black,
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ),
             );
