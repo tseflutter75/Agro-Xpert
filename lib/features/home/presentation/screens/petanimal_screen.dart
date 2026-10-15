@@ -1,4 +1,3 @@
-import 'package:agroxpert/app/color.dart';
 import 'package:flutter/material.dart';
 
 class PetAnimalScreen extends StatefulWidget {
@@ -21,12 +20,12 @@ class _PetAnimalScreenState extends State<PetAnimalScreen> {
 
   List<String> images = [
     "assets/images/posu/gorudugdho.png",
-    "assets/images/posu/gorugorumota.jpg",
+    "assets/images/posu/gorugorumota.png",
     "assets/images/posu/chagoldesi.png",
-    "assets/images/posu/chagolhaibrid.jpg",
-    "assets/images/posu/mohis.jpg",
-    "assets/images/posu/vera.jpg",
-    "assets/images/posu/khorgos.jpg",
+    "assets/images/posu/chagolhaibrid.png",
+    "assets/images/posu/mohis.png",
+    "assets/images/posu/vera.png",
+    "assets/images/posu/khorgos.png",
   ];
 
   // Removed selectedItemCheckColor since we check it dynamically per item

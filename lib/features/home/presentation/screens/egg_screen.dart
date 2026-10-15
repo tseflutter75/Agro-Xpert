@@ -20,12 +20,12 @@ class _EggScreenState extends State<EggScreen> {
 
   List<String> images = [
     "assets/images/dim/farmerlaldim.png",
-    "assets/images/dim/farmerdimsada.jpg",
-    "assets/images/dim/desimurgirdim.jpg",
-    "assets/images/dim/haserdim.jpg",
-    "assets/images/dim/koyelerdim.jpg",
-    "assets/images/dim/organikdim.jpg",
-    "assets/images/dim/organikdim.jpg",
+    "assets/images/dim/farmerdimsada.png",
+    "assets/images/dim/desimurgirdim.png",
+    "assets/images/dim/haserdim.png",
+    "assets/images/dim/koyelerdim.png",
+    "assets/images/dim/organikdim.png",
+    "assets/images/dim/organikdim.png",
   ];
 
   // Removed selectedItemCheckColor since we check it dynamically per item

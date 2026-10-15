@@ -20,14 +20,14 @@ class _ChickenDuckScreenState extends State<ChickenDuckScreen> {
   ];
 
   List<String> images = [
-    "assets/images/hasmurgi/leyar.jpg",
-    "assets/images/hasmurgi/broiler.jpg",
-    "assets/images/hasmurgi/desimurgi.jpg",
-    "assets/images/hasmurgi/sonali.jpg",
-    "assets/images/hasmurgi/koyel.jpg",
-    "assets/images/hasmurgi/has.jpg",
-    "assets/images/hasmurgi/tarki.jpg",
-    "assets/images/hasmurgi/kobutor.jpg",
+    "assets/images/hasmurgi/leyar.png",
+    "assets/images/hasmurgi/broiler.png",
+    "assets/images/hasmurgi/desimurgi.png",
+    "assets/images/hasmurgi/sonali.png",
+    "assets/images/hasmurgi/koyel.png",
+    "assets/images/hasmurgi/has.png",
+    "assets/images/hasmurgi/tarki.png",
+    "assets/images/hasmurgi/kobutor.png",
   ];
 
   // Removed selectedItemCheckColor since we check it dynamically per item
@@ -95,23 +95,3 @@ class _ChickenDuckScreenState extends State<ChickenDuckScreen> {
     );
   }
 }
-
-
-
-// Given an integer array arr, return all the unique pairs [arr[i], 
-// arr[j]] such that i != j and arr[i] + arr[j] == 0.
-
-// Note: The pairs must be returned in sorted order,
-//  the solution array should also be sorted, and the answer must
-//   not contain any duplicate pairs.
-
-// Examples:
-
-// Input: arr = [-1, 0, 1, 2, -1, -4]
-// Output: [[-1, 1]]
-// Explanation: arr[0] + arr[2] = (-1)+ 1 = 0.
-// arr[2] + arr[4] = 1 + (-1) = 0.
-// The distinct pair are [-1,1].
-// Input: arr = [6, 1, 8, 0, 4, -9, -1, -10, -6, -5]
-// Output: [[-6, 6],[-1, 1]]
-// Explanation: The distinct pairs are [-1, 1] and [-6, 6].

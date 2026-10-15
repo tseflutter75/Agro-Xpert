@@ -24,18 +24,18 @@ class _FishScreenState extends State<FishScreen> {
   ];
 
   List<String> images = [
-    "assets/images/motso/rui.jpg",
-    "assets/images/motso/katla.jpg",
-    "assets/images/motso/mrigel.jpg",
-    "assets/images/motso/telapiya.jpg",
-    "assets/images/motso/pangas.jpg",
-    "assets/images/motso/silvarcrap.jpg",
-    "assets/images/motso/grasscrap.jpg",
-    "assets/images/motso/chinri.jpg",
-    "assets/images/motso/ilish.jpg",
+    "assets/images/motso/rui.png",
+    "assets/images/motso/katla.png",
+    "assets/images/motso/mrigel.png",
+    "assets/images/motso/telapiya.png",
+    "assets/images/motso/pangas.png",
+    "assets/images/motso/silvarcrap.png",
+    "assets/images/motso/grasscrap.png",
+    "assets/images/motso/chinri.png",
+    "assets/images/motso/ilish.png",
     "assets/images/motso/sing.png",
-    "assets/images/motso/magur.jpg",
-    "assets/images/motso/magur.jpg",
+    "assets/images/motso/magur.png",
+    "assets/images/motso/magur.png",
   ];
 
   // Removed selectedItemCheckColor since we check it dynamically per item

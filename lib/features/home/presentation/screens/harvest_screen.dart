@@ -21,15 +21,15 @@ class _HarvestScreenState extends State<HarvestScreen> {
   ];
 
   List<String> images = [
-    "assets/images/fosol/sobji.jpg",
+    "assets/images/fosol/sobji.png",
     "assets/images/fosol/dhan.png",
-    "assets/images/fosol/gom.jpg",
-    "assets/images/fosol/vutta.jpg",
-    "assets/images/fosol/job.jpg",
-    "assets/images/fosol/sorisa.jpg",
-    "assets/images/fosol/pat.jpg",
-    "assets/images/fosol/akh.jpg",
-    "assets/images/fosol/mosur.jpg",
+    "assets/images/fosol/gom.png",
+    "assets/images/fosol/vutta.png",
+    "assets/images/fosol/job.png",
+    "assets/images/fosol/sorisa.png",
+    "assets/images/fosol/pat.png",
+    "assets/images/fosol/akh.png",
+    "assets/images/fosol/mosur.png",
   ];
 
   final List<String> selectedItemList = [];
@@ -37,7 +37,11 @@ class _HarvestScreenState extends State<HarvestScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("ফসল"), centerTitle: true),
+      appBar: AppBar(
+        title: const Text("ফসল"),
+        centerTitle: true,
+        backgroundColor: Color(0xFF12B981),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: GridView.builder(
@@ -63,10 +67,10 @@ class _HarvestScreenState extends State<HarvestScreen> {
               },
               child: Container(
                 decoration: BoxDecoration(
-                  color: isSelected ? Colors.green : Colors.white,
+                  color: isSelected ? Color(0xFF12B981) : Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: isSelected ? Colors.green : Colors.green,
+                    color: isSelected ? Color(0xFF12B981) : Color(0xFF12B981),
                   ),
                 ),
                 child: Column(
